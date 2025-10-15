@@ -1,75 +1,83 @@
-<!doctype html>
-</div>
-</div>
-</div>
-</section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medicina Veterinaria UDALBA</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>MEDICINA VETERINARIA UDALBA</h1>
+  </header>
 
+  <main>
+    <!-- PRIMER AÑO -->
+    <section class="anio">
+      <h2>Primer Año</h2>
+      <div class="semestres">
+        <div class="semestre">
+          <h3>1° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="quimicaGeneral">Química General</button>
+            <button class="asig" data-id="biologia">Biología</button>
+            <button class="asig" data-id="zoologia">Zoología</button>
+            <button class="asig" data-id="introMedVet">Introducción a la Medicina Veterinaria</button>
+            <button class="asig" data-id="tecnologia">Tecnología e Innovación</button>
+            <button class="asig" data-id="practicaI">Práctica I</button>
+          </div>
+        </div>
+        <div class="semestre">
+          <h3>2° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="quimicaOrganica" data-prereq="quimicaGeneral">Química Orgánica y Bioquímica</button>
+            <button class="asig" data-id="histoEmbriologia" data-prereq="biologia">Histología y Embriología</button>
+            <button class="asig" data-id="estadistica">Estadística</button>
+            <button class="asig" data-id="ecologia" data-prereq="zoologia">Ecología</button>
+            <button class="asig" data-id="inglesBasico">Inglés Básico</button>
+            <button class="asig" data-id="practicaII" data-prereq="practicaI">Práctica II</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- CUARTO AÑO -->
-<section class="anio" data-anio="4">
-<h2 class="anio-title">Cuarto año</h2>
-<div class="fila">
-<div class="semestre">
-<h3 class="sem-title">7º semestre</h3>
-<div class="asignaturas">
-<button class="asig" data-id="prod1" data-prereq="alimentacion">Producción animal I</button>
-<button class="asig" data-id="enf_inf_par" data-prereq="pat_esp">Enfermedades infecciosas y parasitarias</button>
-<button class="asig" data-id="gineco" data-prereq="semiologia">Ginecología y obstetricia</button>
-<button class="asig" data-id="metod_inv" data-prereq="">Metodología de la investigación</button>
-<button class="asig" data-id="resp_social" data-prereq="">Responsabilidad social y emprendimiento</button>
-<button class="asig" data-id="prac6" data-prereq="prac5">Práctica VI</button>
-</div>
-</div>
+    <!-- SEGUNDO AÑO -->
+    <section class="anio">
+      <h2>Segundo Año</h2>
+      <div class="semestres">
+        <div class="semestre">
+          <h3>3° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="anatomiaI" data-prereq="histoEmbriologia">Anatomía I</button>
+            <button class="asig" data-id="fisiologiaVet" data-prereq="histoEmbriologia">Fisiología Veterinaria</button>
+            <button class="asig" data-id="etologia">Etología y Bienestar Animal</button>
+            <button class="asig" data-id="gestionAmbiental" data-prereq="ecologia">Gestión Ambiental y Conservación</button>
+            <button class="asig" data-id="practicaIII" data-prereq="practicaII">Práctica III</button>
+          </div>
+        </div>
+        <div class="semestre">
+          <h3>4° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="anatomiaII" data-prereq="anatomiaI">Anatomía II</button>
+            <button class="asig" data-id="fisiologiaEspecial" data-prereq="fisiologiaVet">Fisiología Especial</button>
+            <button class="asig" data-id="interaccionHP" data-prereq="fisiologiaVet">Interacción Hospedero Patógeno</button>
+            <button class="asig" data-id="moduloInicial" data-prereq="etologia,gestionAmbiental,practicaIII">Módulo Integrador Ciclo Inicial</button>
+            <button class="asig" data-id="eticaVet">Principios Éticos Veterinarios</button>
+            <button class="asig" data-id="geneticaPec">Genética Pecuaria</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Puedes continuar agregando los demás años aquí -->
 
-<div class="semestre">
-<h3 class="sem-title">8º semestre</h3>
-<div class="asignaturas">
-<button class="asig" data-id="prod2" data-prereq="prod1">Producción animal II</button>
-<button class="asig" data-id="med_int" data-prereq="enf_inf_par">Medicina interna</button>
-<button class="asig" data-id="cirugia_gen" data-prereq="farmaco">Cirugía General</button>
-<button class="asig" data-id="salud_pub" data-prereq="epidemiologia">Salud pública</button>
-<button class="asig" data-id="mod_int_inter" data-prereq="prod1">Módulo integrador ciclo intermedio</button>
-<button class="asig" data-id="prep_lab" data-prereq="">Preparación para la vida laboral</button>
-</div>
-</div>
-</div>
-</section>
+  </main>
 
+  <footer>
+    <button id="resetBtn">Reiniciar Malla</button>
+    <p>© 2025 Malla Interactiva - Medicina Veterinaria UDALBA</p>
+  </footer>
 
-<!-- QUINTO AÑO -->
-<section class="anio" data-anio="5">
-<h2 class="anio-title">Quinto año</h2>
-<div class="fila">
-<div class="semestre">
-<h3 class="sem-title">9º semestre</h3>
-<div class="asignaturas">
-<button class="asig" data-id="tecn_quir" data-prereq="cirugia_gen">Técnicas quirúrgicas</button>
-<button class="asig" data-id="imagenologia" data-prereq="med_int">Imagenología</button>
-<button class="asig" data-id="clin_may" data-prereq="med_int">Clínica de animales mayores</button>
-<button class="asig" data-id="economia" data-prereq="">Economía y administración de empresas veterinarias</button>
-<button class="asig" data-id="clin_men" data-prereq="med_int">Clínica de animales menores</button>
-<button class="asig" data-id="elect1" data-prereq="">Electivo de especialidad I</button>
-</div>
-</div>
-
-
-<div class="semestre">
-<h3 class="sem-title">10º semestre</h3>
-<div class="asignaturas">
-<button class="asig" data-id="mod_int_prof" data-prereq="clin_may,clin_men">Módulo integrador profesional</button>
-<button class="asig" data-id="eval_proy" data-prereq="economia">Evaluación de proyectos</button>
-<button class="asig" data-id="salud_laboral" data-prereq="">Salud laboral y legislación veterinaria</button>
-<button class="asig" data-id="elect2" data-prereq="">Electivo de especialidad II</button>
-</div>
-</div>
-</div>
-</section>
-
-
-</main>
-
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
