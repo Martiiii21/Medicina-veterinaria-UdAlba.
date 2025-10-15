@@ -1,16 +1,118 @@
-:root{
---morado:#5D2B8A; /* morado título */
---morado-claro:#EBDCF7; /* fondo por año */
---amarillo:#FFEB8A; /* bloques asignaturas */
---verde:#7ED957; /* aprobado */
---gris:#666;
---locked:#D9D9D9;
+/* ====== ESTILOS GLOBALES ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f7f3fc; /* fondo general suave */
+  margin: 0;
+  padding: 0;
+  color: #3a255c;
 }
 
+/* ====== ENCABEZADO ====== */
+header {
+  text-align: center;
+  background-color: #a26eea; /* morado medio */
+  color: white;
+  padding: 20px;
+}
 
-*{box-sizing:border-box}
-body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:#fff;color:#222}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:4px solid var(--morado-claro);background:linear-gradient(180deg,white, #faf7ff)}
-.site-header h1{color:var(--morado);margin:0;font-size:20px;letter-spacing:0.6px}
-.controls{display:flex;gap:16px;align-items:center}
-.btn-small{background:tran
+h1 {
+  margin: 0;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+/* ====== SECCIONES POR AÑO ====== */
+.anio {
+  background-color: #ede3fa; /* morado claro pastel */
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 90%;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(110, 80, 160, 0.2);
+}
+
+.anio h2 {
+  color: #7b2cbf;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ====== SEMESTRES ====== */
+.semestres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.semestre {
+  flex: 1;
+  min-width: 300px;
+  background-color: #fdf6ff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.semestre h3 {
+  text-align: center;
+  color: #5b21b6;
+}
+
+/* ====== ASIGNATURAS ====== */
+.asignaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asig {
+  background-color: #ffe97d; /* amarillo pastel */
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.asig:hover {
+  transform: scale(1.03);
+}
+
+.asig.aprobada {
+  background-color: #a5e6a3 !important; /* verde pastel */
+  color: #2f6136;
+}
+
+.asig.bloqueada {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  background-color: #a26eea;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#resetBtn {
+  background-color: white;
+  border: 2px solid #a26eea;
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: #a26eea;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#resetBtn:hover {
+  background-color: #d8c2f2;
+}
