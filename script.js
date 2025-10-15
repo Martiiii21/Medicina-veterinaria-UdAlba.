@@ -1,111 +1,61 @@
-// Malla interactiva — guarda estado en localStorage, desbloquea por prereqs
-const STORAGE_KEY = 'malla_medvet_udalba_v1';
+document.addEventListener("DOMContentLoaded", () => {
+  const asignaturas = document.querySelectorAll(".asig");
+  const resetBtn = document.getElementById("resetBtn");
+  const aprobadas = JSON.parse(localStorage.getItem("aprobadas")) || [];
 
-// Helpers
-const qs = s => document.querySelector(s);
-const qsa = s => Array.from(document.querySelectorAll(s));
-
-// Al cargar el documento
-document.addEventListener('DOMContentLoaded', () => {
-  const estado = loadEstado();
-  const botones = qsa('.asig');
-
-  // Aplicar estado guardado
-  botones.forEach(btn => {
-    const id = btn.dataset.id;
-    if (estado.completed && estado.completed.includes(id)) {
-      btn.classList.add('completed');
-      btn.removeAttribute('disabled');
-      btn.classList.remove('locked');
+  // Cargar asignaturas guardadas
+  asignaturas.forEach(asig => {
+    const id = asig.dataset.id;
+    if (aprobadas.includes(id)) {
+      asig.classList.add("aprobada");
     }
   });
 
-  // Actualizar desbloqueos iniciales
-  actualizarDesbloqueos();
+  actualizarBloqueos();
 
-  // Clic en asignatura
-  botones.forEach(btn => {
-    btn.addEventListener('click', () => onClickAsignatura(btn));
-  });
+  // Clic para aprobar
+  asignaturas.forEach(asig => {
+    asig.addEventListener("click", () => {
+      if (asig.classList.contains("bloqueada")) return;
 
-  // Reiniciar malla
-  qs('#resetBtn').addEventListener('click', () => {
-    if (confirm('¿Seguro que quieres reiniciar la malla y borrar aprobadas?')) {
-      localStorage.removeItem(STORAGE_KEY);
-      qsa('.asig').forEach(b => {
-        b.classList.remove('completed', 'locked');
-        b.removeAttribute('disabled');
-      });
-      actualizarDesbloqueos();
-    }
-  });
-});
+      const id = asig.dataset.id;
+      asig.classList.toggle("aprobada");
 
-// Cuando se hace clic en una asignatura
-function onClickAsignatura(btn) {
-  if (btn.classList.contains('locked')) return; // bloqueado
-
-  const id = btn.dataset.id;
-  const estado = loadEstado();
-  estado.completed = estado.completed || [];
-
-  // Alternar estado (aprobado/no aprobado)
-  if (btn.classList.contains('completed')) {
-    btn.classList.remove('completed');
-    const idx = estado.completed.indexOf(id);
-    if (idx > -1) estado.completed.splice(idx, 1);
-  } else {
-    btn.classList.add('completed');
-    if (!estado.completed.includes(id)) estado.completed.push(id);
-  }
-
-  saveEstado(estado);
-  actualizarDesbloqueos();
-}
-
-// Actualiza qué asignaturas se desbloquean según prerequisitos
-function actualizarDesbloqueos() {
-  const botones = qsa('.asig');
-  const estado = loadEstado();
-  const completed = new Set(estado.completed || []);
-
-  botones.forEach(btn => {
-    const prereqRaw = btn.dataset.prereq || '';
-    const prereqs = prereqRaw.split(',').map(s => s.trim()).filter(Boolean);
-
-    if (prereqs.length === 0) {
-      // Sin prerequisitos
-      btn.classList.remove('locked');
-      btn.removeAttribute('disabled');
-      return;
-    }
-
-    // Verificar si todos los prerequisitos están aprobados
-    const ok = prereqs.every(p => completed.has(p));
-    if (ok) {
-      btn.classList.remove('locked');
-      btn.removeAttribute('disabled');
-    } else {
-      if (!btn.classList.contains('completed')) {
-        btn.classList.add('locked');
-        btn.setAttribute('disabled', 'true');
+      if (asig.classList.contains("aprobada")) {
+        aprobadas.push(id);
+      } else {
+        const index = aprobadas.indexOf(id);
+        if (index > -1) aprobadas.splice(index, 1);
       }
-    }
+
+      localStorage.setItem("aprobadas", JSON.stringify(aprobadas));
+      actualizarBloqueos();
+    });
   });
-}
 
-// Guardar y cargar estado desde localStorage
-function loadEstado() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : { completed: [] };
-  } catch (e) {
-    return { completed: [] };
+  // Botón para reiniciar progreso
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("aprobadas");
+    asignaturas.forEach(a => a.classList.remove("aprobada", "bloqueada"));
+    actualizarBloqueos();
+  });
+
+  function actualizarBloqueos() {
+    asignaturas.forEach(asig => {
+      const prereq = asig.dataset.prereq;
+      if (!prereq) {
+        asig.classList.remove("bloqueada");
+        return;
+      }
+
+      const requisitos = prereq.split(",");
+      const cumplidos = requisitos.every(r => aprobadas.includes(r.trim()));
+
+      if (cumplidos) {
+        asig.classList.remove("bloqueada");
+      } else {
+        asig.classList.add("bloqueada");
+      }
+    });
   }
-}
-
-function saveEstado(obj) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(obj));
-  } catch (e) {}
-}
+});
