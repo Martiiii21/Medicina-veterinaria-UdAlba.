@@ -1,118 +1,80 @@
-/* ====== ESTILOS GLOBALES ====== */
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f7f3fc; /* fondo general suave */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f0fa;
   margin: 0;
   padding: 0;
-  color: #3a255c;
+  color: #333;
 }
 
-/* ====== ENCABEZADO ====== */
 header {
-  text-align: center;
-  background-color: #a26eea; /* morado medio */
+  background-color: #7b2cbf;
   color: white;
-  padding: 20px;
-}
-
-h1 {
-  margin: 0;
-  font-size: 2em;
-  letter-spacing: 1px;
-}
-
-/* ====== SECCIONES POR AÑO ====== */
-.anio {
-  background-color: #ede3fa; /* morado claro pastel */
-  border-radius: 15px;
-  margin: 20px auto;
-  width: 90%;
-  padding: 20px;
-  box-shadow: 0 0 8px rgba(110, 80, 160, 0.2);
-}
-
-.anio h2 {
-  color: #7b2cbf;
   text-align: center;
-  font-weight: 700;
-  margin-bottom: 10px;
+  padding: 1.5rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-/* ====== SEMESTRES ====== */
+.anio {
+  background-color: #e9d8fd;
+  margin: 20px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
+}
+
+h2 {
+  color: #6a1b9a;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
 .semestres {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
 }
 
 .semestre {
   flex: 1;
   min-width: 300px;
-  background-color: #fdf6ff;
-  border-radius: 10px;
+  background: white;
+  border-radius: 12px;
   padding: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .semestre h3 {
   text-align: center;
-  color: #5b21b6;
+  color: #7b2cbf;
+  margin-bottom: 10px;
 }
 
-/* ====== ASIGNATURAS ====== */
 .asignaturas {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.asig {
-  background-color: #ffe97d; /* amarillo pastel */
-  border: none;
+.asignatura {
+  background-color: #ffef99;
   border-radius: 10px;
   padding: 10px;
-  font-weight: 600;
-  transition: 0.3s;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.asig:hover {
-  transform: scale(1.03);
-}
-
-.asig.aprobada {
-  background-color: #a5e6a3 !important; /* verde pastel */
-  color: #2f6136;
-}
-
-.asig.bloqueada {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-/* ====== FOOTER ====== */
-footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  background-color: #a26eea;
-  color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-#resetBtn {
-  background-color: white;
-  border: 2px solid #a26eea;
-  border-radius: 10px;
-  padding: 10px 20px;
-  color: #a26eea;
-  font-weight: 600;
   cursor: pointer;
-  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-#resetBtn:hover {
-  background-color: #d8c2f2;
+.asignatura:hover {
+  background-color: #ffdf70;
+}
+
+.asignatura.aprobada {
+  background-color: #6ee7b7;
+  color: #064e3b;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,128,0,0.4);
 }
