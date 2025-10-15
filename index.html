@@ -12,10 +12,12 @@
   </header>
 
   <main>
+
     <!-- PRIMER AÑO -->
     <section class="anio">
       <h2>Primer Año</h2>
       <div class="semestres">
+
         <div class="semestre">
           <h3>1° Semestre</h3>
           <div class="asignaturas">
@@ -27,6 +29,7 @@
             <button class="asig" data-id="practicaI">Práctica I</button>
           </div>
         </div>
+
         <div class="semestre">
           <h3>2° Semestre</h3>
           <div class="asignaturas">
@@ -38,6 +41,7 @@
             <button class="asig" data-id="practicaII" data-prereq="practicaI">Práctica II</button>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -45,6 +49,7 @@
     <section class="anio">
       <h2>Segundo Año</h2>
       <div class="semestres">
+
         <div class="semestre">
           <h3>3° Semestre</h3>
           <div class="asignaturas">
@@ -55,6 +60,7 @@
             <button class="asig" data-id="practicaIII" data-prereq="practicaII">Práctica III</button>
           </div>
         </div>
+
         <div class="semestre">
           <h3>4° Semestre</h3>
           <div class="asignaturas">
@@ -66,10 +72,103 @@
             <button class="asig" data-id="geneticaPec">Genética Pecuaria</button>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Puedes continuar agregando los demás años aquí -->
+    <!-- TERCER AÑO -->
+    <section class="anio">
+      <h2>Tercer Año</h2>
+      <div class="semestres">
+
+        <div class="semestre">
+          <h3>5° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="nutricionAnimal" data-prereq="fisiologiaEspecial">Alimentación y Nutrición Animal</button>
+            <button class="asig" data-id="patologiaFuncional" data-prereq="fisiologiaEspecial">Patología Funcional</button>
+            <button class="asig" data-id="inspeccionAlimentos" data-prereq="interaccionHP">Inspección y Control de Alimentos</button>
+            <button class="asig" data-id="epidemiologia" data-prereq="interaccionHP">Epidemiología</button>
+            <button class="asig" data-id="desarrolloSostenible">Desarrollo Sostenible</button>
+            <button class="asig" data-id="practicaIV" data-prereq="moduloInicial">Práctica IV</button>
+          </div>
+        </div>
+
+        <div class="semestre">
+          <h3>6° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="farmacologia" data-prereq="fisiologiaEspecial">Farmacología y Terapéutica</button>
+            <button class="asig" data-id="semiologia" data-prereq="anatomiaII">Semiología</button>
+            <button class="asig" data-id="hematologia" data-prereq="fisiologiaEspecial">Hematología y Laboratorio Clínico</button>
+            <button class="asig" data-id="patologiaEspecial" data-prereq="patologiaFuncional">Patología Especial</button>
+            <button class="asig" data-id="inglesTecnico">Inglés Técnico</button>
+            <button class="asig" data-id="practicaV" data-prereq="practicaIV">Práctica V</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CUARTO AÑO -->
+    <section class="anio">
+      <h2>Cuarto Año</h2>
+      <div class="semestres">
+
+        <div class="semestre">
+          <h3>7° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="produccionAnimalI" data-prereq="nutricionAnimal">Producción Animal I</button>
+            <button class="asig" data-id="enfermedadesIP" data-prereq="patologiaEspecial">Enfermedades Infecciosas y Parasitarias</button>
+            <button class="asig" data-id="ginecologia" data-prereq="semiologia">Ginecología y Obstetricia</button>
+            <button class="asig" data-id="metodologiaInv">Metodología de la Investigación</button>
+            <button class="asig" data-id="responsabilidadSocial">Responsabilidad Social y Emprendimiento</button>
+            <button class="asig" data-id="practicaVI" data-prereq="practicaV">Práctica VI</button>
+          </div>
+        </div>
+
+        <div class="semestre">
+          <h3>8° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="produccionAnimalII" data-prereq="produccionAnimalI">Producción Animal II</button>
+            <button class="asig" data-id="medicinaInterna" data-prereq="enfermedadesIP">Medicina Interna</button>
+            <button class="asig" data-id="cirugiaGeneral" data-prereq="farmacologia">Cirugía General</button>
+            <button class="asig" data-id="saludPublica" data-prereq="epidemiologia">Salud Pública</button>
+            <button class="asig" data-id="moduloIntermedio" data-prereq="produccionAnimalI,enfermedadesIP,practicaVI">Módulo Integrador Ciclo Intermedio</button>
+            <button class="asig" data-id="vidaLaboral">Preparación para la Vida Laboral</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUINTO AÑO -->
+    <section class="anio">
+      <h2>Quinto Año</h2>
+      <div class="semestres">
+
+        <div class="semestre">
+          <h3>9° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="tecnicasQ" data-prereq="cirugiaGeneral">Técnicas Quirúrgicas</button>
+            <button class="asig" data-id="imagenologia" data-prereq="medicinaInterna">Imagenología</button>
+            <button class="asig" data-id="clinicaMayores" data-prereq="medicinaInterna">Clínica de Animales Mayores</button>
+            <button class="asig" data-id="economiaVet" data-prereq="responsabilidadSocial">Economía y Administración de Empresas Veterinarias</button>
+            <button class="asig" data-id="clinicaMenores" data-prereq="medicinaInterna">Clínica de Animales Menores</button>
+            <button class="asig" data-id="electivoI">Electivo de Especialidad I</button>
+          </div>
+        </div>
+
+        <div class="semestre">
+          <h3>10° Semestre</h3>
+          <div class="asignaturas">
+            <button class="asig" data-id="moduloProfesional" data-prereq="clinicaMayores,clinicaMenores,tecnicasQ">Módulo Integrador Profesional</button>
+            <button class="asig" data-id="evaluacionProy" data-prereq="economiaVet">Evaluación de Proyectos</button>
+            <button class="asig" data-id="saludLaboral">Salud Laboral y Legislación Veterinaria</button>
+            <button class="asig" data-id="electivoII" data-prereq="electivoI">Electivo de Especialidad II</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </main>
 
