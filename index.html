@@ -7,158 +7,138 @@
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <header>
-    <h1>MEDICINA VETERINARIA UDALBA</h1>
-  </header>
+  <h1 class="titulo">MEDICINA VETERINARIA UDALBA</h1>
 
-  <main id="malla">
-    <!-- ================= PRIMER AÑO ================= -->
-    <section class="anio">
+  <div id="contenedor-malla">
+    <!-- Primer Año -->
+    <div class="anio">
       <h2>Primer Año</h2>
       <div class="semestres">
         <div class="semestre">
           <h3>1° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="quimica">Química general</div>
-            <div class="asignatura" data-id="biologia">Biología</div>
-            <div class="asignatura" data-id="zoologia">Zoología</div>
-            <div class="asignatura">Introducción a la medicina veterinaria</div>
-            <div class="asignatura">Tecnología e innovación</div>
-            <div class="asignatura" data-id="practica1">Práctica I</div>
-          </div>
+          <button class="ramo" data-id="quimica-general">Química General</button>
+          <button class="ramo" data-id="biologia">Biología</button>
+          <button class="ramo" data-id="zoologia">Zoología</button>
+          <button class="ramo" data-id="intro-med-vet">Introducción a la Medicina Veterinaria</button>
+          <button class="ramo" data-id="tecnologia-innovacion">Tecnología e Innovación</button>
+          <button class="ramo" data-id="practica-I">Práctica I</button>
         </div>
 
         <div class="semestre">
           <h3>2° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="quimica2" data-req="quimica">Química orgánica y bioquímica</div>
-            <div class="asignatura" data-id="histo" data-req="biologia">Histología y embriología</div>
-            <div class="asignatura">Estadística</div>
-            <div class="asignatura" data-id="eco" data-req="zoologia">Ecología</div>
-            <div class="asignatura">Inglés básico</div>
-            <div class="asignatura" data-id="practica2" data-req="practica1">Práctica II</div>
-          </div>
+          <button class="ramo" data-id="quimica-organica" data-prereq="quimica-general">Química Orgánica y Bioquímica</button>
+          <button class="ramo" data-id="histologia" data-prereq="biologia">Histología y Embriología</button>
+          <button class="ramo" data-id="estadistica">Estadística</button>
+          <button class="ramo" data-id="ecologia" data-prereq="zoologia">Ecología</button>
+          <button class="ramo" data-id="ingles-basico">Inglés Básico</button>
+          <button class="ramo" data-id="practica-II" data-prereq="practica-I">Práctica II</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= SEGUNDO AÑO ================= -->
-    <section class="anio">
+    <!-- Segundo Año -->
+    <div class="anio">
       <h2>Segundo Año</h2>
       <div class="semestres">
         <div class="semestre">
           <h3>3° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="anato1" data-req="histo">Anatomía I</div>
-            <div class="asignatura" data-id="fisio" data-req="histo">Fisiología veterinaria</div>
-            <div class="asignatura" data-id="etologia">Etología y bienestar animal</div>
-            <div class="asignatura" data-id="gestion" data-req="eco">Gestión ambiental y conservación</div>
-            <div class="asignatura" data-id="practica3" data-req="practica2">Práctica III</div>
-          </div>
+          <button class="ramo" data-id="anatomia-I" data-prereq="histologia">Anatomía I</button>
+          <button class="ramo" data-id="fisiologia" data-prereq="histologia">Fisiología Veterinaria</button>
+          <button class="ramo" data-id="etologia" data-prereq="ecologia">Etología y Bienestar Animal</button>
+          <button class="ramo" data-id="gestion-ambiental" data-prereq="ecologia">Gestión Ambiental y Conservación</button>
+          <button class="ramo" data-id="practica-III" data-prereq="practica-II">Práctica III</button>
         </div>
 
         <div class="semestre">
           <h3>4° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="anato2" data-req="anato1">Anatomía II</div>
-            <div class="asignatura" data-id="fisioesp" data-req="fisio">Fisiología especial</div>
-            <div class="asignatura" data-id="interaccion" data-req="fisio">Interacción hospedero-patógeno</div>
-            <div class="asignatura" data-id="modinicial" data-req="gestion etologia practica3">Módulo integrador ciclo inicial</div>
-            <div class="asignatura">Principios éticos veterinarios</div>
-            <div class="asignatura">Genética pecuaria</div>
-          </div>
+          <button class="ramo" data-id="anatomia-II" data-prereq="anatomia-I">Anatomía II</button>
+          <button class="ramo" data-id="fisiologia-especial" data-prereq="fisiologia">Fisiología Especial</button>
+          <button class="ramo" data-id="interaccion-hospedero" data-prereq="fisiologia">Interacción Hospedero-Patógeno</button>
+          <button class="ramo" data-id="modulo-inicial" data-prereq="etologia,gestion-ambiental,practica-III">Módulo Integrador Ciclo Inicial</button>
+          <button class="ramo" data-id="principios-eticos">Principios Éticos Veterinarios</button>
+          <button class="ramo" data-id="genetica">Genética Pecuaria</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= TERCER AÑO ================= -->
-    <section class="anio">
+    <!-- Tercer Año -->
+    <div class="anio">
       <h2>Tercer Año</h2>
       <div class="semestres">
         <div class="semestre">
           <h3>5° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="alim" data-req="fisioesp">Alimentación y nutrición animal</div>
-            <div class="asignatura" data-id="patofun" data-req="fisioesp">Patología funcional</div>
-            <div class="asignatura" data-req="interaccion">Inspección y control de alimentos</div>
-            <div class="asignatura" data-id="epidemio" data-req="interaccion">Epidemiología</div>
-            <div class="asignatura">Desarrollo sostenible</div>
-            <div class="asignatura" data-id="practica4" data-req="modinicial">Práctica IV</div>
-          </div>
+          <button class="ramo" data-id="alimentacion" data-prereq="fisiologia-especial">Alimentación y Nutrición Animal</button>
+          <button class="ramo" data-id="patologia-funcional" data-prereq="fisiologia-especial">Patología Funcional</button>
+          <button class="ramo" data-id="inspeccion-alimentos" data-prereq="interaccion-hospedero">Inspección y Control de Alimentos</button>
+          <button class="ramo" data-id="epidemiologia" data-prereq="interaccion-hospedero">Epidemiología</button>
+          <button class="ramo" data-id="desarrollo-sostenible">Desarrollo Sostenible</button>
+          <button class="ramo" data-id="practica-IV" data-prereq="modulo-inicial">Práctica IV</button>
         </div>
 
         <div class="semestre">
           <h3>6° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="farmaco">Farmacología y terapéutica</div>
-            <div class="asignatura" data-id="semio">Semiología</div>
-            <div class="asignatura" data-id="hema" data-req="patofun">Hematología y laboratorio clínico</div>
-            <div class="asignatura" data-id="patoespecial" data-req="patofun">Patología especial</div>
-            <div class="asignatura">Inglés técnico</div>
-            <div class="asignatura" data-id="practica5" data-req="practica4">Práctica V</div>
-          </div>
+          <button class="ramo" data-id="farmacologia" data-prereq="fisiologia-especial">Farmacología y Terapéutica</button>
+          <button class="ramo" data-id="semiologia" data-prereq="anatomia-II">Semiología</button>
+          <button class="ramo" data-id="hematologia" data-prereq="fisiologia-especial">Hematología y Laboratorio Clínico</button>
+          <button class="ramo" data-id="patologia-especial" data-prereq="patologia-funcional">Patología Especial</button>
+          <button class="ramo" data-id="ingles-tecnico">Inglés Técnico</button>
+          <button class="ramo" data-id="practica-V" data-prereq="practica-IV">Práctica V</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= CUARTO AÑO ================= -->
-    <section class="anio">
+    <!-- Cuarto Año -->
+    <div class="anio">
       <h2>Cuarto Año</h2>
       <div class="semestres">
         <div class="semestre">
           <h3>7° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="produccion1" data-req="alim">Producción animal I</div>
-            <div class="asignatura" data-id="enfermedades" data-req="patoespecial">Enfermedades infecciosas y parasitarias</div>
-            <div class="asignatura" data-req="semio">Ginecología y obstetricia</div>
-            <div class="asignatura">Metodología de la investigación</div>
-            <div class="asignatura">Responsabilidad social y emprendimiento</div>
-            <div class="asignatura" data-id="practica6" data-req="practica5">Práctica VI</div>
-          </div>
+          <button class="ramo" data-id="produccion-I" data-prereq="alimentacion">Producción Animal I</button>
+          <button class="ramo" data-id="enfermedades-infecciosas" data-prereq="patologia-especial">Enfermedades Infecciosas y Parasitarias</button>
+          <button class="ramo" data-id="ginecologia" data-prereq="semiologia">Ginecología y Obstetricia</button>
+          <button class="ramo" data-id="metodologia">Metodología de la Investigación</button>
+          <button class="ramo" data-id="responsabilidad-social">Responsabilidad Social y Emprendimiento</button>
+          <button class="ramo" data-id="practica-VI" data-prereq="practica-V">Práctica VI</button>
         </div>
 
         <div class="semestre">
           <h3>8° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="produccion2" data-req="produccion1">Producción animal II</div>
-            <div class="asignatura" data-id="medinterna" data-req="enfermedades">Medicina interna</div>
-            <div class="asignatura" data-id="cirugia" data-req="farmaco">Cirugía general</div>
-            <div class="asignatura" data-id="saludpublica" data-req="epidemio">Salud pública</div>
-            <div class="asignatura" data-id="modintermedio" data-req="produccion1 practica6">Módulo integrador ciclo intermedio</div>
-            <div class="asignatura">Preparación para la vida laboral</div>
-          </div>
+          <button class="ramo" data-id="produccion-II" data-prereq="produccion-I">Producción Animal II</button>
+          <button class="ramo" data-id="medicina-interna" data-prereq="enfermedades-infecciosas">Medicina Interna</button>
+          <button class="ramo" data-id="cirugia-general" data-prereq="farmacologia">Cirugía General</button>
+          <button class="ramo" data-id="salud-publica" data-prereq="epidemiologia">Salud Pública</button>
+          <button class="ramo" data-id="modulo-intermedio" data-prereq="produccion-I,enfermedades-infecciosas,practica-VI">Módulo Integrador Ciclo Intermedio</button>
+          <button class="ramo" data-id="vida-laboral">Preparación para la Vida Laboral</button>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- ================= QUINTO AÑO ================= -->
-    <section class="anio">
+    <!-- Quinto Año -->
+    <div class="anio">
       <h2>Quinto Año</h2>
       <div class="semestres">
         <div class="semestre">
           <h3>9° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-id="tecnicas" data-req="cirugia">Técnicas quirúrgicas</div>
-            <div class="asignatura" data-id="imagen" data-req="medinterna">Imagenología</div>
-            <div class="asignatura" data-id="mayores" data-req="medinterna">Clínica de animales mayores</div>
-            <div class="asignatura" data-id="economia">Economía y administración veterinaria</div>
-            <div class="asignatura" data-id="menores" data-req="medinterna">Clínica de animales menores</div>
-            <div class="asignatura">Electivo de especialidad I</div>
-          </div>
+          <button class="ramo" data-id="tecnicas-quirurgicas" data-prereq="cirugia-general">Técnicas Quirúrgicas</button>
+          <button class="ramo" data-id="imagenologia" data-prereq="medicina-interna">Imagenología</button>
+          <button class="ramo" data-id="clinica-mayores" data-prereq="medicina-interna">Clínica de Animales Mayores</button>
+          <button class="ramo" data-id="economia" data-prereq="responsabilidad-social">Economía y Administración de Empresas Veterinarias</button>
+          <button class="ramo" data-id="clinica-menores" data-prereq="medicina-interna">Clínica de Animales Menores</button>
+          <button class="ramo" data-id="electivo-I">Electivo de Especialidad I</button>
         </div>
 
         <div class="semestre">
           <h3>10° Semestre</h3>
-          <div class="asignaturas">
-            <div class="asignatura" data-req="mayores menores tecnicas">Módulo integrador profesional</div>
-            <div class="asignatura" data-req="economia">Evaluación de proyectos</div>
-            <div class="asignatura">Salud laboral y legislación veterinaria</div>
-            <div class="asignatura">Electivo de especialidad II</div>
-          </div>
+          <button class="ramo" data-id="modulo-profesional" data-prereq="clinica-mayores,clinica-menores">Módulo Integrador Profesional</button>
+          <button class="ramo" data-id="evaluacion-proyectos" data-prereq="economia">Evaluación de Proyectos</button>
+          <button class="ramo" data-id="salud-laboral">Salud Laboral y Legislación Veterinaria</button>
+          <button class="ramo" data-id="electivo-II" data-prereq="electivo-I">Electivo de Especialidad II</button>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+
+  <button id="reset">Reiniciar Malla</button>
 
   <script src="script.js"></script>
 </body>
