@@ -12,10 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (cumplidos) {
         asig.classList.add("aprobada");
+        asig.animate(
+          [{ transform: "scale(1.2)" }, { transform: "scale(1)" }],
+          { duration: 400, easing: "ease-out" }
+        );
       } else if (requisitos.length > 0) {
         alert("Debes aprobar antes: " + requisitos.join(", "));
       } else {
         asig.classList.add("aprobada");
+        asig.animate(
+          [{ transform: "scale(1.2)" }, { transform: "scale(1)" }],
+          { duration: 400, easing: "ease-out" }
+        );
       }
     });
   });
