@@ -1,0 +1,16 @@
+:root{
+--morado:#5D2B8A; /* morado título */
+--morado-claro:#EBDCF7; /* fondo por año */
+--amarillo:#FFEB8A; /* bloques asignaturas */
+--verde:#7ED957; /* aprobado */
+--gris:#666;
+--locked:#D9D9D9;
+}
+
+
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:#fff;color:#222}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:4px solid var(--morado-claro);background:linear-gradient(180deg,white, #faf7ff)}
+.site-header h1{color:var(--morado);margin:0;font-size:20px;letter-spacing:0.6px}
+.controls{display:flex;gap:16px;align-items:center}
+.btn-small{background:tran
